@@ -1,0 +1,62 @@
+﻿<Window x:Class="ZooPark.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZooPark"
+        mc:Ignorable="d"
+        Title="Избор" Height="408" Width="751">
+    <Window.Background>
+        <ImageBrush ImageSource="\background.jpg"></ImageBrush>
+    </Window.Background>
+    <Grid Margin="10,0,0,3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Name="btnAnimals" Content="Животни" HorizontalAlignment="Left" Width="200" Height="100" VerticalAlignment="Top" Margin="20,7,0,0" Grid.Row="2"  Command="{Binding SelectedAnimalsCommand}" Click="btnAnimals_Click"></Button>
+        <Button Name="btnEvents" Content="Събития" HorizontalAlignment="Center" Width="200" Height="100" VerticalAlignment="Top" Margin="0,7,0,0" Grid.Row="2"  Command="{Binding SelectEventsCommand}" Click="btnEvents_Click"></Button>
+        <Button Name="btnTickets" Content="Билети" HorizontalAlignment="Right" Width="200" Height="100" VerticalAlignment="Top" Margin="0,7,20,0" Grid.Row="2"  Command="{Binding SelectedTicketsCommand}" Click="btnTickets_Click"></Button>
+        <Grid Margin="0,0,0,389" Grid.RowSpan="3">
+            <ListView Name="AnimalsView" Margin="26,141,0,-329"   HorizontalAlignment="Center"  Width="474">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn  Header="Категория" Width="320"  />
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid Margin="0,0,0,389" Grid.RowSpan="3">
+            <ListView Name="EventsView" Margin="26,141,0,-329"   HorizontalAlignment="Center"  Width="474">
+                <ListView.View  >
+                    <GridView>
+                        <GridViewColumn  Header="Събитие" Width="320"  />
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Grid Margin="0,0,0,389" Grid.RowSpan="3">
+            <ListView Name="TicketsView" Margin="45,141,0,-329"   HorizontalAlignment="Center"  Width="676" >
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn  Header="Категория" Width="320"  />
+                    </GridView>
+                    
+                </ListView.View>
+                
+            </ListView>
+
+        </Grid>
+        <Button x:Name="btnSearch" Content="Търси" HorizontalAlignment="Right" Margin="0,0,20,15"  VerticalAlignment="Bottom" Width="90" Height="34" Grid.RowSpan="3" Click="btnSearch_Click"/>
+        <Button x:Name="btnBuy" Content="Купи" HorizontalAlignment="Right" Margin="0,0,20,15"  VerticalAlignment="Bottom" Width="90" Height="34" Grid.RowSpan="3" Click="btnBuy_Click" />
+        <Button x:Name="btnInfo" Content="Информация за събитието" HorizontalAlignment="Right" Margin="0,0,20,15"  VerticalAlignment="Bottom" Width="140" Height="34" Grid.RowSpan="3" Click="btnInfo_Click"  />
+
+    </Grid>
+
+
+
+
+</Window>
